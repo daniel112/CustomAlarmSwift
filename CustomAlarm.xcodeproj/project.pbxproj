@@ -12,6 +12,7 @@
 		132868952141F8E600148740 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132868932141F8E600148740 /* Main.storyboard */; };
 		132868972141F8E800148740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 132868962141F8E800148740 /* Assets.xcassets */; };
 		1328689A2141F8E800148740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132868982141F8E800148740 /* LaunchScreen.storyboard */; };
+		132868A22141FACF00148740 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 132868A12141FACF00148740 /* sound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		132868962141F8E800148740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		132868992141F8E800148740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1328689B2141F8E800148740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		132868A12141FACF00148740 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
+		132868A32141FD5400148740 /* CustomAlarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CustomAlarm.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,8 @@
 		1328688E2141F8E600148740 /* CustomAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				132868A32141FD5400148740 /* CustomAlarm.entitlements */,
+				132868A12141FACF00148740 /* sound.mp3 */,
 				1328688F2141F8E600148740 /* AppDelegate.swift */,
 				132868912141F8E600148740 /* ViewController.swift */,
 				132868932141F8E600148740 /* Main.storyboard */,
@@ -96,6 +101,14 @@
 				TargetAttributes = {
 					1328688B2141F8E600148740 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -123,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1328689A2141F8E800148740 /* LaunchScreen.storyboard in Resources */,
+				132868A22141FACF00148740 /* sound.mp3 in Resources */,
 				132868972141F8E800148740 /* Assets.xcassets in Resources */,
 				132868952141F8E600148740 /* Main.storyboard in Resources */,
 			);
@@ -280,15 +294,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EMG5DC5D6W;
+				CODE_SIGN_ENTITLEMENTS = CustomAlarm/CustomAlarm.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 6W2A826YQJ;
 				INFOPLIST_FILE = CustomAlarm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sandhills.CustomAlarm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danielyo.customAlarm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b23b0cbf-a5d1-40be-bbba-bde4be592483";
+				PROVISIONING_PROFILE_SPECIFIER = "customAlarm Development";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,15 +317,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EMG5DC5D6W;
+				CODE_SIGN_ENTITLEMENTS = CustomAlarm/CustomAlarm.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CustomAlarm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sandhills.CustomAlarm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danielyo.customAlarm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
