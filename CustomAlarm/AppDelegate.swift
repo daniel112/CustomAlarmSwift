@@ -9,6 +9,8 @@
 import UIKit
 import UserNotifications
 import AVFoundation
+import Firebase
+import FirebaseFirestore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerForPushNotifications()
         UNUserNotificationCenter.current().delegate = self
 
+        FirebaseApp.configure()
+
+        // Initialize the window
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        UINavigationBar.appearance().barTintColor = UIColor.black
+        UIApplication.shared.statusBarStyle = .lightContent
+
+        window!.rootViewController = UINavigationController.init(rootViewController: LoginViewController())
+        
+        window!.makeKeyAndVisible()
         return true
     }
     
